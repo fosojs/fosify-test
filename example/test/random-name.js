@@ -12,6 +12,6 @@ var hello = proxyquire('../lib/hello', stubs);
 
 describe('hello', function() {
   it('return hello with random name', function() {
-    expect(hello()).toBe('Hello Jack!');
+    expect(hello()).to.equal('Hello Jack!');
   });
 });
