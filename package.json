@@ -1,6 +1,6 @@
 {
   "name": "fosify-test",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A foso plugin for running front-end unit tests.",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
     "karma-mocha": "^0.2.0",
     "karma-nyan-reporter": "^0.1.0",
     "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon": "^1.0.4",
     "node-lessify": "0.0.10",
     "proxyquireify": "^1.2.1",
     "stringify": "^3.1.0"
