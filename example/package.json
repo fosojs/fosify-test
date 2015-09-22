@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "foso": "^0.9.3"
+    "foso": "^0.10.3"
   }
 }
