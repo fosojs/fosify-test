@@ -1,5 +1,6 @@
 'use strict';
 
+var expect = require('chai').expect;
 var sum = require('../lib/sum');
 
 describe('sum', function() {
