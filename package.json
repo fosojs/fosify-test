@@ -19,12 +19,12 @@
     "karma-mocha": "^0.2.0",
     "karma-nyan-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^0.2.1",
+    "mocha": "^2.3.4",
     "phantomjs": "^1.9.18",
     "proxyquireify": "^3.0.0"
   },
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*"
+    "chai": "*"
   },
   "repository": {
     "type": "git",
