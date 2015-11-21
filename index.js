@@ -33,7 +33,7 @@ function run(opts, cb) {
     console.log('Karma child process ended');
   });
 
-  process.on('exit', function () {
+  process.on('exit', function() {
     child.kill();
   });
 
