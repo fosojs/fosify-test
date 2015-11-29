@@ -1,9 +1,9 @@
 'use strict';
 
-var randomName = require('./random-name');
+import randomName from './random-name';
 
 function hello() {
-  return 'Hello ' + randomName() + '!';
+  return `Hello ${randomName()}!`;
 }
 
 module.exports = hello;

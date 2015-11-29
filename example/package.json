@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "foso": "^0.10.3"
+    "foso": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.3.0"

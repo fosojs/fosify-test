@@ -6,38 +6,43 @@ var server = require('karma').server;
 var path = require('path');
 var spawn = require('child_process').spawn;
 
-function run(opts, cb) {
-  opts = opts || {};
+module.exports = function(app, opts, next) {
   futil.notifyUpdate(pkg);
 
-  var karmaOpts = {
-    configFile: path.join(__dirname, './lib/karma.conf'),
-    singleRun: !opts.watch,
-    autoWatch: opts.watch
-  };
+  app.expose('bundle', function(cb) {
+    var karmaOpts = {
+      configFile: path.join(__dirname, './lib/karma.conf'),
+      singleRun: !opts.watch,
+      autoWatch: opts.watch
+    };
 
-  // Start the server
-  var child = spawn(
-    'node',
-    [
-      path.join(__dirname, 'lib', 'background.js'),
-      JSON.stringify(karmaOpts)
-    ],
-    {
-      stdio: 'inherit'
-    }
-  );
+    // Start the server
+    var child = spawn(
+      'node',
+      [
+        path.join(__dirname, 'lib', 'background.js'),
+        JSON.stringify(karmaOpts)
+      ],
+      {
+        stdio: 'inherit'
+      }
+    );
 
-  // Cleanup when the child process exits
-  child.on('exit', function(code) {
-    console.log('Karma child process ended');
+    // Cleanup when the child process exits
+    child.on('exit', function(code) {
+      console.log('Karma child process ended');
+    });
+
+    process.on('exit', function() {
+      child.kill();
+    });
+
+    cb();
   });
 
-  process.on('exit', function() {
-    child.kill();
-  });
+  next();
+};
 
-  cb();
-}
-
-module.exports = run;
+module.exports.attributes = {
+  pkg
+};
