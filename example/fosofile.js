@@ -1,11 +1,11 @@
 'use strict';
 
-var foso = require('foso');
+var Foso = require('foso');
 var test = require('../');
 
+var foso = new Foso();
 foso
-  .please({
+  .register(test, {
     watch: true
   })
-  .fosify(test)
-  .now();
+  .then(() => foso.bundle());
