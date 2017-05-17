@@ -1,5 +1,7 @@
 # fosify-test
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fosojs/fosify-test.svg)](https://greenkeeper.io/)
+
 A [foso][] plugin for running front-end unit tests.
 
 [![Dependency Status](https://david-dm.org/fosojs/fosify-test/status.svg?style=flat)](https://david-dm.org/fosojs/fosify-test)
